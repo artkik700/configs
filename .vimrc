@@ -101,13 +101,14 @@ au TabLeave * let g:lasttab = tabpagenr()
 " Fast saves
 nmap <leader>w :w!<cr>
 
-nmap " O<Esc>
-nmap ' o<Esc>
+nnoremap <Leader>O O<Esc>
+nnoremap <Leader>o o<Esc>
+
 nmap <Leader>n :tabnew<CR>
 nmap <F8> :tabp<CR>
 nmap <F9> :tabn<CR>
     
-:imap jj <Esc>
+imap jj <Esc>
 imap <A-h> <left>
 imap <A-j> <down>
 imap <A-k> <up>
@@ -150,9 +151,9 @@ map <Leader>k <Plug>(easymotion-k)
 autocmd InsertEnter * :setlocal nohlsearch
 autocmd InsertLeave * :setlocal hlsearch
 
-set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set statusline=%#warningmsg#
+set statusline=%{SyntasticStatuslineFlag()}
+set statusline=%*
 
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
@@ -268,7 +269,7 @@ set clipboard=unnamed
 
 " faster redrawing
 set ttyfast
-s
+
 " code folding settings
 set foldmethod=syntax " fold based on indent
 set foldnestmax=10 " deepest fold is 10 levels
